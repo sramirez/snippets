@@ -1,0 +1,3 @@
+# Apply OHE on the entire DF but only on a given column
+
+pd.get_dummies(df, columns = 'columnA')
