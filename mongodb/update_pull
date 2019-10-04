@@ -1,0 +1,12 @@
+db.getCollection('X').updateMany( {},
+    { $pull: { 'arrayField': { "field": 'APP STORE' } } }
+)
+
+# Update all documents whose array field "arrayField" contains the field with the given value.
+
+
+db.getCollection('X').updateMany( {"arrayField.field": "oldValue"},
+    { $set: { 'arrayField.$.field': 'newValue'} }
+)
+
+# Update a given array field matching with old value for the same field 
