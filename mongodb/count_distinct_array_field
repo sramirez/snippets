@@ -1,0 +1,9 @@
+db.getCollection('X').aggregate(
+    {$unwind : "$arrayField"},
+    {$group: {
+        _id : "$arrayField.subField"
+    }},
+    {$group: {
+        distinctValues : {$addToSet : "$_id"}
+    }}
+);
